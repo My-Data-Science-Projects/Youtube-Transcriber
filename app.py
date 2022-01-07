@@ -7,7 +7,7 @@ from youtube_transcript_api import YouTubeTranscriptApi as yta
 def main():
     st.title('Transcribe YouTube Videos')
 
-    form = st.form(key="my_form", clear_on_submit=True)
+    form = st.form(key="my_form", clear_on_submit=False)
     link = form.text_input(label="Enter YouTube Link")
 
     df = pd.read_csv("lang.csv")
