@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 from streamlit_player import st_player
-from urllib.parse import urlparse
+from pytube import extract
 from youtube_transcript_api import YouTubeTranscriptApi as yta
 
 def main():
@@ -22,8 +22,7 @@ def main():
         if submit_button and link != '':
             st_player(link)
 
-            url_data = urlparse(link)
-            vid_id = url_data.query[2::]
+            vid_id = extract.video_id(link)
 
             # transcript_list = yta.list_transcripts(vid_id)
 
